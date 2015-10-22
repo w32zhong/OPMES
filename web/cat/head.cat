@@ -1,0 +1,48 @@
+<!-- BEGIN head.cat -->
+<html>
+<head>
+<title>Demo Page</title>
+<script type="text/x-mathjax-config"> 
+MathJax.Hub.Config({ 
+        tex2jax: { 
+                inlineMath: [['[imath]','[/imath]']], 
+                displayMath: [['[dmath]','[/dmath]']],
+                processEnvironments: false
+        }, 
+}); 
+</script> 
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+<style>
+div.container {
+margin: 20px 0px 30px 0px;
+left:15%;
+position:absolute;
+}
+hr {
+display: block;
+border-style: inset;
+border-width: 1px;
+width:800px;
+margin: 20px 0 20px 0;
+}
+li {
+margin-top: 25px;
+margin-bottom: 25px;
+}
+table.rank_item td {
+width: 350px;
+}
+table.page_indicator td {
+width: 200px;
+}
+li:hover { 
+width: 720px;
+background-color: #f7f7f7; 
+}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- END head.cat -->

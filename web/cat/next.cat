@@ -1,0 +1,3 @@
+<!-- BEGIN next.cat -->
+<td><a href="#" style="color: blue;" onclick="document.next.submit();">next page&gt;</a></td>
+<!-- END next.cat -->

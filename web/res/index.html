@@ -1,0 +1,352 @@
+<html><head>
+<title>Demo Page</title>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+<style>
+input.my_font_awesome {
+	font-family: FontAwesome;
+}
+
+div.vertical_container {
+	width: 97%;
+	position:absolute;
+	top: 370px;
+}
+
+div.mathman_container {
+	margin: auto;
+	width: 45%;
+	padding-top: 0.25em;
+}
+
+div.input_container {
+	margin: auto;
+	background-color: #f7f7f7;
+	border: 1px solid #aaa;
+	width: 49%;
+	position: relative;
+	border-radius: 5px;
+	padding-left: 0.75em;
+	padding-top: 0.25em;
+	max-width: 600px;
+
+	/* input exceeding editor width */
+	padding-right: 40px; 
+}
+
+form.form_css {
+	height: 1.6em;
+}
+
+input.input_box {
+	font-size: 1.4em;
+	height: 1.6em;
+	width: 100%;
+	outline: none;
+	border: none;
+	background-color: #f7f7f7;
+}
+
+input.search_button {
+	position: absolute;
+	min-height: 2.1em;
+	min-width: 36px;
+	height: 2.1em;
+	border: none;
+	right: 2px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	font-size: 1.25em;
+	top: 0;
+	bottom: 0;
+	color: #444;
+	background-color: #f7f7f7;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+input.search_button:hover {
+	background-color: #63ad57;
+	color: white;
+}
+
+div.mathman {
+position:absolute;
+margin-top:120px;
+z-index:-1;
+}
+
+div.bubble0 {
+border-radius: 50%;
+position:absolute;
+z-index:888;
+margin-top:120px;
+margin-left:150px;
+border-color:#C1C1C1;
+border-width:5px;	
+border-style:solid;
+padding: 4px 10px 4px 10px;
+}
+
+div.bubble1 {
+border-radius: 50%;
+position:absolute;
+z-index:888;
+margin-top:90px;
+margin-left:200px;
+border-color:#C1C1C1;
+border-width:5px;	
+border-style:solid;
+padding: 10px 20px 10px 20px;
+}
+
+div.bubble2 {
+border-radius: 50%;
+position:absolute;
+z-index:999;
+margin-top:10px;
+margin-left:250px;
+border-color:#C1C1C1;
+border-width:5px;	
+border-style:solid;
+padding: 20px 20px 20px 20px;
+}
+
+div.v_carousel_container {
+	width: 97%;
+	position:absolute;
+	top: 440px;
+}
+
+div.h_carousel_container {
+	margin:auto;
+	width:40%;
+}
+
+div.my_carousel_item {
+	height: 100px;
+}
+
+/* overwrite carousel default colors */
+.carousel-indicators li {
+	background-color: #FFF;
+	border: solid 1px #555;
+}
+.carousel-indicators .active {
+	background-color: #555;
+	border: solid 1px #111;
+}
+.carousel-caption {
+	text-shadow: none;
+	color: #555;
+}
+
+span.try_this {
+	color: grey;
+	font-size: 15px;
+}
+
+div.foot {
+	position: absolute;
+	top: 630px;
+	width: 97%;
+	text-align: center;
+	font-size: 15px;
+	color: grey;
+}
+</style>
+
+<script type="text/x-mathjax-config"> 
+MathJax.Hub.Config({ 
+        tex2jax: { 
+				processEnvironments: false,
+                inlineMath: [['[imath]','[/imath]']], 
+                displayMath: [['[dmath]','[/dmath]']] 
+        },
+        "HTML-CSS": {
+                scale: 150 
+        }
+}); 
+</script> 
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script type="text/javascript">
+function update(obj)
+{
+	var text = obj.value;
+	document.getElementById('preview').innerHTML = "[dmath]" + text + "[/dmath]";
+
+	MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+}
+
+function foo(trythis)
+{
+	var tex = trythis.innerText;
+	var input = document.getElementById('input_box');
+	input.value = tex;
+	update(input);
+}
+</script>
+</head>
+
+<body>
+
+<div class="mathman_container">
+<div class="bubble2"><span id="preview" style="font-size:16pt;">
+<p style="font-size:23pt;">Have I seen this equation before?</p>
+</span></div>
+<div class="bubble1"></div>
+<div class="bubble0"></div>
+<div class="mathman"><img src="mathman.png"/></div>
+</div>
+
+<div class="vertical_container">
+<div class="input_container">
+<form class="form_css" action="/cgi/search.cgi?s=0" method="post">
+    <input id="input_box" class="input_box" type="text" name="q" 
+     onkeyup="update(this);" onfocus="update(this);" autocomplete="off" spellcheck="false"></input>
+	<input type="submit" class="search_button my_font_awesome" value="&#xF002;"/>
+<form>
+</div>
+</div>
+
+<div class="v_carousel_container">
+<div class="h_carousel_container">
+<span class="try_this">No idea? Try these:</span>
+<div id="my_slider" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#my_slider" data-slide-to="0" class="active"></li>
+    <li data-target="#my_slider" data-slide-to="1"></li>
+    <li data-target="#my_slider" data-slide-to="2"></li>
+    <li data-target="#my_slider" data-slide-to="3"></li>
+    <li data-target="#my_slider" data-slide-to="4"></li>
+    <li data-target="#my_slider" data-slide-to="5"></li>
+    <li data-target="#my_slider" data-slide-to="6"></li>
+    <li data-target="#my_slider" data-slide-to="7"></li>
+    <li data-target="#my_slider" data-slide-to="8"></li>
+    <li data-target="#my_slider" data-slide-to="9"></li>
+    <li data-target="#my_slider" data-slide-to="10"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+
+	<div class="item active">
+      <div class="my_carousel_item"></div>
+      <div class="carousel-caption">
+<a style="display:block; text-decoration:none;" class="try_this" onclick="javascript:foo(this)">
+-b \pm \sqrt{b^2 - 4ac}
+</a>
+      </div>
+    </div>
+
+	<div class="item">
+      <div class="my_carousel_item"></div>
+      <div class="carousel-caption">
+<a style="display:block; text-decoration:none;" class="try_this" onclick="javascript:foo(this)">
+\sec ^2 \theta = 
+</a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="my_carousel_item"></div>
+      <div class="carousel-caption">
+<a style="display:block; text-decoration:none;" class="try_this" onclick="javascript:foo(this)">
+e^\pi -1 \over e^\pi + 1
+</a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="my_carousel_item"></div>
+      <div class="carousel-caption">
+<a style="display:block; text-decoration:none;" class="try_this" onclick="javascript:foo(this)">
+\lim_{x \to \infty} (1 + \dfrac 1x)^x
+</a>
+      </div>
+    </div>
+
+	<div class="item">
+      <div class="my_carousel_item"></div>
+      <div class="carousel-caption">
+<a style="display:block; text-decoration:none;" class="try_this" onclick="javascript:foo(this)">
+\frac {n!}{r_1! \cdot r_2! \cdots r_k!}
+</a>
+      </div>
+    </div>
+    
+	<div class="item">
+      <div class="my_carousel_item"></div>
+      <div class="carousel-caption">
+<a style="display:block; text-decoration:none;" class="try_this" onclick="javascript:foo(this)">
+\int_a^b f(x) \;\mathrm{d}x = F(b) - F(a)
+</a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="my_carousel_item"></div>
+      <div class="carousel-caption">
+<a style="display:block; text-decoration:none;" class="try_this" onclick="javascript:foo(this)">
+x^2 + 2xy + y^2 = |x|^2 + 2|x||y| + |y| ^2
+</a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="my_carousel_item"></div>
+      <div class="carousel-caption">
+<a style="display:block; text-decoration:none;" class="try_this" onclick="javascript:foo(this)">
+f(x) = f(0) + f'(0)x + \frac{f''(0)}{2!} x^2 + \ldots
+</a>
+      </div>
+    </div>
+
+	<div class="item">
+      <div class="my_carousel_item"></div>
+      <div class="carousel-caption">
+<a style="display:block; text-decoration:none;" class="try_this" onclick="javascript:foo(this)">
+f(a) = \frac 1 {2 \pi i} \oint_r \frac{f(z)}{z-a} \;\mathrm{d}z
+</a>
+      </div>
+    </div>
+
+	<div class="item">
+      <div class="my_carousel_item"></div>
+      <div class="carousel-caption">
+<a style="display:block; text-decoration:none;" class="try_this" onclick="javascript:foo(this)">
+\frac{\partial f}{\partial t}=a \frac{\partial^2 f}{\partial x^2}
+</a>
+      </div>
+    </div>
+
+	<div class="item">
+      <div class="my_carousel_item"></div>
+      <div class="carousel-caption">
+<a style="display:block; text-decoration:none;" class="try_this" onclick="javascript:foo(this)">
+\begin{vmatrix}1&amp;x&amp;x^2\\1&amp;y&amp;y^2\\1&amp;z&amp;z^2\end{vmatrix}
+</a>
+      </div>
+    </div>
+
+&nbsp;
+  </div>
+</div>
+</div>
+</div>
+
+<div class="foot">
+<p>
+Search engine powered by <a href="about.html" target="_blank">OPMES</a>, this page is demo only. 
+</p>
+</div>
+
+</body>
+</html>

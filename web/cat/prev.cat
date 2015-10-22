@@ -1,0 +1,3 @@
+<!-- BEGIN prev.cat -->
+<td><a href="#" style="color: blue;" onclick="document.prev.submit();">&lt;previous page</a></td>
+<!-- END prev.cat -->

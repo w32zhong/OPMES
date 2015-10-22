@@ -1,0 +1,3 @@
+f(x)g(x)=[f(x)\bigg(\int g(x)dx\bigg)]'-f'(x)\bigg(\int g(x)dx\bigg)
+\operatorname{E} \left[ \sup_{t \geq 0} \left| \int_t^{t+h} X_s \, \mathrm{d} B_s \right|^p \right]
+\sum_{k=0}^n

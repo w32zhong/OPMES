@@ -1,0 +1,71 @@
+<html>
+
+<head>
+<title>Bootstrap Carousel Example</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<style>
+div.v_container {
+	width: 98%;
+	position:absolute;
+	top: 500px;
+}
+div.h_container {
+	margin:auto;
+	width:30%;
+}
+div.my_item {
+	height: 100px;
+	border-radius: 10px;	
+}
+
+/* overwrite carousel default colors */
+.carousel-indicators li {
+	background-color: #FFF;
+	border: solid 1px #555;
+}
+.carousel-indicators .active {
+	background-color: #555;
+	border: solid 1px #111;
+}
+.carousel-caption {
+	color: #555;
+}
+</style>
+</head>
+
+<body>
+<div class="v_container">
+<div class="h_container">
+<div id="my_slider" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#my_slider" data-slide-to="0" class="active"></li>
+    <li data-target="#my_slider" data-slide-to="1"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+
+    <div class="item active">
+      <div class="my_item">no color</div>
+      <div class="carousel-caption">
+		This does not have a color
+      </div>
+    </div>
+
+    <div class="item">
+      <div style="background-color:red;" class="my_item">red</div>
+      <div class="carousel-caption">
+		This is colored as red.
+      </div>
+    </div>
+&nbsp;
+  </div>
+</div>
+</div>
+</div>
+</body>
+
+</html>
