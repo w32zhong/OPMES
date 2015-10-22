@@ -64,7 +64,7 @@ static void query_subst(char *query)
 
 void echo_hidden_form(char *name, char *query, uint32_t page)
 {
-	printf("<form action=\"/cgi/search.cgi?s=%u\" "
+	printf("<form action=\"search.cgi?s=%u\" "
 	       "method=\"post\" name=\"%s\">"
 	       "<input type=\"hidden\" name=\"q\" value=\"%s\">"
 	       "</form>", page, name, query);

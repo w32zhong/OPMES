@@ -1,1 +1,1 @@
-WEB_DIR = /usr/share/nginx/html/opmes
+WEB_DIR = /var/www/html/opmes
