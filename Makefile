@@ -9,10 +9,20 @@ MODULES := hello crawler common parser index search web test
 
 all: tags all-rules.mk libhello $(MODULES)
 
-clean: tags-clean libhello-clean $(MODULES:=-clean) 
+clean: tags-clean libhello-clean $(MODULES:=-clean) clean-demo
 	@ echo '[clean deplinks]'
 	$(FIND) -name 'dep-*.mk' -print | xargs rm -f
 	make clean-rules.mk
+
+clean-demo:
+	rm -rf col col-raw-math.stackexchange.com *.log *.db *.out
+
+demo: all
+	python2 ./crawler/crawler-math.stackexchange.com.py -p 314159 # crawl http://math.stackexchange.com/questions/314159
+	ln -s ./index/index.out
+	./index/index-math.stackexchange.com.sh col-raw-math.stackexchange.com/
+	find ./col
+	./search/search.out -n -q '1/2 (n-1)!'
 
 all-rules.mk:
 	make common/rules.mk
