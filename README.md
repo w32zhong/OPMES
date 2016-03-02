@@ -10,7 +10,7 @@ Also, here is the link to our online demo:
 [http://tkhost.github.io/opmes](http://tkhost.github.io/opmes)
 
 # Demo Plan 
-In our paper, we have a demo plan trying to illustrate how our system related to our method by showing:
+In our paper, we have a demo plan trying to illustrate how our system is related to our method by showing:
 
 * Parser output
 * Index tree structure
