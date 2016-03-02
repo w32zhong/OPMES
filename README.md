@@ -2,9 +2,9 @@
 This is the repository of OPMES (Operation-tree Pruning based Math Expression Search).
 The code implements a prototype and is for demonstration only.
 
-The source repo is mainly for the code reference of our published system on ECIR 2016, and source code is not intended to be update in this repo. 
+The source repo is mainly for the code reference of our published system on [ECIR 2016](http://ecir2016.dei.unipd.it/accepted_papers.html), and source code is not intended to be update in this repo. 
 
-Our paper can be downloaded from [here](https://github.com/tkhost/tkhost.github.io/blob/master/opmes/ecir2016.pdf) and you may find [the slides](https://github.com/tkhost/tkhost.github.io/blob/master/opmes/ECIR16-OPMES-slides-handouts.pdf) helpful to understand our system.
+Our paper can be downloaded from [here](https://github.com/tkhost/tkhost.github.io/blob/master/opmes/ecir2016.pdf) and you may find [this slide](https://github.com/tkhost/tkhost.github.io/blob/master/opmes/ECIR16-OPMES-slides-handouts.pdf) helpful to understand our system.
 
 Also, here is the link to our online demo:
 [http://tkhost.github.io/opmes](http://tkhost.github.io/opmes)
